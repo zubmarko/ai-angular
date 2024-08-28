@@ -1,0 +1,50 @@
+{
+  "name": "jscodeshift-examples",
+  "version": "1.0.0",
+  "description": "Examples of jscodeshift",
+  "scripts": {
+    "audit": "npm audit --json | npx npm-audit-html --output reports/audit/index.html && npm audit --audit-level=high",
+    "clean": "rm -rf reports",
+    "lint": "npm run type:check && npm run eslint",
+    "eslint": "eslint . --ext js,ts",
+    "eslint:check": "eslint --print-config path/to/main.js | eslint-config-prettier-check",
+    "eslint:fix": "eslint --fix **/*.ts",
+    "jest:projects": "jest --config=jest.config.projects.js",
+    "jest:projects:watch": "npm run jest:projects -- --watch",
+    "prettier:check": "prettier --check **/*.{js,ts,css,json,md}",
+    "prettier:write": "prettier --write **/*.{js,ts,css,json,md}",
+    "start": "ts-node scripts/run-jscodeshift-transforms.ts",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "type:check": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "Cheong Yip <wingy3181@gmail.com> (https://wingcheongyip.com/)",
+  "license": "MIT",
+  "engines": {
+    "node": "^22.0.0"
+  },
+  "devDependencies": {
+    "@types/inquirer": "6.5.0",
+    "@types/jest": "25.2.3",
+    "@types/jscodeshift": "0.7.1",
+    "@types/node": "13.13.15",
+    "@typescript-eslint/eslint-plugin": "2.34.0",
+    "@typescript-eslint/parser": "2.34.0",
+    "eslint": "7.0.0",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-prettier": "3.1.4",
+    "inquirer": "7.1.0",
+    "jest": "26.0.1",
+    "jest-html-reporters": "1.2.1",
+    "jest-runner-eslint": "0.8.0",
+    "jest-stare": "2.0.1",
+    "jscodeshift": "0.13.0",
+    "lint-staged": "10.2.11",
+    "prettier": "2.0.5",
+    "semver": "7.3.2",
+    "ts-jest": "26.0.0",
+    "ts-node": "8.10.2",
+    "typescript": "3.9.7"
+  }
+}
