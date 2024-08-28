@@ -21,6 +21,7 @@ const transformBinding = (htmlContent) => {
         { from: 'ng-class', to: '[ngClass]' },
         { from: 'ng-style', to: '[ngStyle]' },
         { from: 'ng-bind', to: '[ngBind]' },
+        { from: 'ng-model', to: '[ngModel]' },
         { from: 'ng-src', to: '[src]' }
     ];
 

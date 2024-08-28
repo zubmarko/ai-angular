@@ -32,6 +32,12 @@ describe('transformBinding', () => {
         expect(transformBinding(input)).toBe(output);
     });
 
+    it('should replace ng-model with [ngModel]', () => {
+        const input = '<div ng-model="someText"></div>';
+        const output = '<div [ngModel]="someText"></div>';
+        expect(transformBinding(input)).toBe(output);
+    });
+
     it('should replace ng-src with [src]', () => {
         const input = '<img ng-src="someImageSource" />';
         const output = '<img [src]="someImageSource" />';
