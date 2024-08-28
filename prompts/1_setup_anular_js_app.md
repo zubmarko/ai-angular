@@ -1,5 +1,3 @@
-# Setup Demo Angular.js application
-
 1. Create angular.js application with pages Statistics and Customers
 2. create service to fetch data on pages
 3. use webpack for project
@@ -47,3 +45,8 @@
 45. add collapse to tree component
 46. click on <a ng-click="$ctrl.toggle(node)" because drag event intersect
 47. add animation to collapse
+48. Uncaught Error: [$injector:modulerr] Failed to instantiate module myApp due to:
+49. Error: [$injector:unpr] Unknown provider: e
+50. validate file
+51. fix component to use bootstrap 3
+52. make header fixed return only HTML file

@@ -53,13 +53,6 @@
 }
 
 
-.form-check-input {
-  position: absolute;
-  margin-top: .3rem;
-  margin-left: -1.5rem !important;
-}
-
-
 // 
 .new-customer {
   // background-color: #d4edda !important;
@@ -79,11 +72,10 @@
 .navbar-nav {
   font-size: 14px;
   text-transform: uppercase;
-  
-  
 }
 
 body {
+  padding: 55px 0 0;
   .navbar-light .navbar-nav .nav-link {
     display: block;
     padding: 12px 12px;

@@ -29,3 +29,6 @@ export default function createCustomerModalController($scope, $uibModalInstance)
     $uibModalInstance.dismiss('cancel');
   };
 }
+
+createCustomerModalController.$inject = ["$scope", "$uibModalInstance"];
+

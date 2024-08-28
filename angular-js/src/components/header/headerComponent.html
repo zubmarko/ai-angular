@@ -1,26 +1,23 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">AngularJS App</a>
-
-    <div class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#!statistics">Statistics</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#!customers">Customers</a>
-          </li>
-        </ul>
-
-    </div>
-
-      <div uib-dropdown is-open="$ctrl.isDropdownOpen">
-        <a href="#" class="nav-link"  ng-click="$ctrl.toggleDropdown($event)">
-          {{ $ctrl.username }} <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu dropdown-menu-right" uib-dropdown-menu>
-          <li><a href="#"  ng-click="$ctrl.onLogout()">Logout</a></li>
-        </ul>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+      <div class="navbar-header">
+          <a class="navbar-brand" href="#">AngularJS App</a>
       </div>
-    </div>
-  </nav>
-  
+      <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+              <li><a href="#!statistics">Statistics</a></li>
+              <li><a href="#!customers">Customers</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+              <li uib-dropdown is-open="$ctrl.isDropdownOpen">
+                  <a href="#" class="nav-link" ng-click="$ctrl.toggleDropdown($event)">
+                      {{ $ctrl.username }} <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                      <li><a href="#" ng-click="$ctrl.onLogout()">Logout</a></li>
+                  </ul>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>
