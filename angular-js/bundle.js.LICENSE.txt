@@ -1,0 +1,32 @@
+/*!
+ * Chart.js v2.9.4
+ * https://www.chartjs.org
+ * (c) 2020 Chart.js Contributors
+ * Released under the MIT License
+ */
+
+/*!
+ * angular-chart.js - An angular.js wrapper for Chart.js
+ * http://jtblin.github.io/angular-chart.js/
+ * Version: 1.1.1
+ *
+ * Copyright 2016 Jerome Touffe-Blin
+ * Released under the BSD-2-Clause license
+ * https://github.com/jtblin/angular-chart.js/blob/master/LICENSE
+ */
+
+/**
+ * @license Angular UI Tree v2.22.6
+ * (c) 2010-2017. https://github.com/angular-ui-tree/angular-ui-tree
+ * License: MIT
+ */
+
+/**
+ * @license AngularJS v1.8.3
+ * (c) 2010-2020 Google LLC. http://angularjs.org
+ * License: MIT
+ */
+
+//! moment.js
+
+//! moment.js locale configuration
