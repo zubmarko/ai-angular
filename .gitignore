@@ -1,0 +1,9 @@
+
+tmp/
+build/
+dist/
+
+# Node
+node_modules/
+dist/
+screenshots/

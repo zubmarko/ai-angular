@@ -1,0 +1,28 @@
+<header-component username="username" on-logout="logout()"></header-component>
+
+<div class="container">
+  <h1>{{ title }}</h1>
+  <button class="btn btn-primary" ng-click="openCreateCustomerModal()">Add New Customer</button>
+  <div class="row">
+    <div class="col-md-3">
+      <h3>Software Categories</h3>
+      <tree-component categories="categories"></tree-component>
+    </div>
+    <div class="col-md-9">
+      <div class="panel-group">
+        <div
+          class="panel panel-default"
+          ng-repeat="customer in customers"
+          ng-class="{'new-customer': customer === newlyAddedCustomer}"
+        >
+          
+          <div class="panel-body">
+            {{ customer.name }}
+            Age: {{ customer.age }} 
+            City: {{ customer.city }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

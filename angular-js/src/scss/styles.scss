@@ -1,0 +1,185 @@
+// Import Bootstrap
+
+
+  /* Animations for the Total Revenue toggle */
+.revenue {
+  transition: all 0.5s ease;
+  opacity: 1;
+}
+
+.revenue.ng-enter {
+  opacity: 0;
+}
+
+.revenue.ng-enter-active {
+  opacity: 1;
+}
+
+.revenue.ng-leave {
+  opacity: 1;
+}
+
+.revenue.ng-leave-active {
+  opacity: 0;
+}
+
+
+// Login
+.login-container {
+  max-width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+
+  .text-danger {
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
+
+.form-check-input {
+  position: absolute;
+  margin-top: .3rem;
+  margin-left: -1.5rem !important;
+}
+
+
+// 
+.new-customer {
+  // background-color: #d4edda !important;
+  transition: background-color 1s ease;
+}
+
+.new-customer.ng-enter {
+  background-color: #ffffff;
+}
+
+.new-customer.ng-enter-active {
+  background-color: #d4edda;
+}
+
+
+
+.navbar-nav {
+  font-size: 14px;
+  text-transform: uppercase;
+  
+  
+}
+
+body {
+  .navbar-light .navbar-nav .nav-link {
+    display: block;
+    padding: 12px 12px;
+    color: #337ab7;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+}
+
+
+.chart-container {
+  position: relative;
+  height: 280x;
+  width: 500px;
+  margin-bottom: 30px;
+}
+
+
+.tree-node {
+  padding: 5px;
+  background-color: #f7f7f7;
+  margin: 5px 0;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  cursor: move;
+}
+
+.tree-node:hover {
+  background-color: #e6e6e6;
+}
+
+.ui-tree-drag {
+  background-color: #cce5ff !important;
+}
+.collapsed {
+  display: none;
+}
+
+.tree-node {
+  padding: 5px;
+  background-color: #f7f7f7;
+  margin: 5px 0;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  cursor: move;
+}
+
+.tree-node:hover {
+  background-color: #e6e6e6;
+}
+
+.ui-tree-drag {
+  background-color: #cce5ff !important;
+}
+
+.btn-xs {
+  margin-right: 5px;
+}
+
+.glyphicon-chevron-right,
+.glyphicon-chevron-down {
+  font-size: 12px;
+}
+
+
+/* Animations for collapse and expand */
+ol,
+ol.ng-enter, ol.ng-leave {
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+
+.collapsed-remove-active,
+.collapsed-add-active {
+  opacity: 1;
+}
+.collapsed {
+  opacity: 0;
+}
+
+ol.ng-enter {
+  max-height: 0;
+  opacity: 0;
+}
+
+ol.ng-enter-active {
+  max-height: 1000px; /* Set to a large enough value to accommodate the content */
+  opacity: 1;
+}
+
+ol.ng-leave {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+ol.ng-leave-active {
+  max-height: 0;
+  opacity: 0;
+}

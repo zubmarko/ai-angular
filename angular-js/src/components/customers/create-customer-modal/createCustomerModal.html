@@ -1,0 +1,34 @@
+<div class="modal-header">
+  <h3 class="modal-title">Create New Customer</h3>
+</div>
+<div class="modal-body">
+  <form name="customerForm" novalidate>
+    <div class="form-group" ng-class="{'has-error': customerForm.name.$invalid && submitted}">
+      <label for="name">Name</label>
+      <input type="text" ng-model="newCustomer.name" id="name" name="name" class="form-control" required>
+      <div ng-show="customerForm.name.$invalid && submitted" class="text-danger">
+        Name is required.
+      </div>
+    </div>
+    <div class="form-group" ng-class="{'has-error': customerForm.age.$invalid && submitted}">
+      <label for="age">Age</label>
+      <input type="number" ng-model="newCustomer.age" id="age" name="age" class="form-control" required min="1">
+      <div ng-show="customerForm.age.$invalid && submitted" class="text-danger">
+        Age is required and must be a positive number.
+      </div>
+    </div>
+    <div class="form-group" ng-class="{'has-error': customerForm.city.$invalid && submitted}">
+      <label for="city">City</label>
+      <select ng-model="newCustomer.city" id="city" name="city" class="form-control" ng-options="city for city in cities" required>
+        <option value="" disabled selected>Select your city</option>
+      </select>
+      <div ng-show="customerForm.city.$invalid && submitted" class="text-danger">
+        City is required.
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+  <button class="btn btn-primary" ng-click="submit(customerForm)">Submit</button>
+</div>
