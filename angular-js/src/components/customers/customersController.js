@@ -101,3 +101,5 @@ export default function customersController($scope, dataService, $uibModal) {
     });
   };
 }
+
+customersController.$inject = ["$scope", "dataService", "$uibModal"];
