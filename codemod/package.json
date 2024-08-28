@@ -22,7 +22,7 @@
   "author": "Cheong Yip <wingy3181@gmail.com> (https://wingcheongyip.com/)",
   "license": "MIT",
   "engines": {
-    "node": "^22.0.0"
+    "node": ">=20.0.0"
   },
   "devDependencies": {
     "@types/inquirer": "6.5.0",
@@ -39,12 +39,18 @@
     "jest-html-reporters": "1.2.1",
     "jest-runner-eslint": "0.8.0",
     "jest-stare": "2.0.1",
-    "jscodeshift": "0.13.0",
+    "jscodeshift": "17.0.0",
     "lint-staged": "10.2.11",
     "prettier": "2.0.5",
     "semver": "7.3.2",
     "ts-jest": "26.0.0",
     "ts-node": "8.10.2",
     "typescript": "3.9.7"
+  },
+  "dependencies": {
+    "dom-serializer": "^2.0.0",
+    "domhandler": "^5.0.3",
+    "htmlparser2": "^9.1.0",
+    "recast": "^0.23.9"
   }
 }

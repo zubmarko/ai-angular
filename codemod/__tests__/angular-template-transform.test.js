@@ -8,7 +8,7 @@ describe("Codemod - Convert to Angular Syntax", () => {
     const fileInfo = { source: input };
     const options = {};
     const result = transform(fileInfo, api, options);
-    expect(result).toBe(expectedOutput);
+    expect(result.trim()).toBe(expectedOutput.trim());
   };
 
   describe("converts ng-if to *ngIf", () => {
@@ -187,6 +187,28 @@ describe("Codemod - Convert to Angular Syntax", () => {
           <input [(ngModel)]="newItemName" (click)="addItem()" />
         </ul>
       </div>
+      `;
+
+      runTest(input, expectedOutput);
+    });
+
+    test("transforms complex AngularJS bindings to Angular bindings", () => {
+      const input = `
+      <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" id="toggleSwitch" ng-model="$ctrl.isChecked" ng-change="$ctrl.toggle()">
+      <label class="form-check-label" for="toggleSwitch">
+        {{ $ctrl.label }}
+      </label>
+    </div>
+      `;
+
+      const expectedOutput = `
+      <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" id="toggleSwitch" [(ngModel)]="isChecked" ng-change="toggle()">
+      <label class="form-check-label" for="toggleSwitch">
+        {{ label }}
+      </label>
+    </div>
       `;
 
       runTest(input, expectedOutput);
