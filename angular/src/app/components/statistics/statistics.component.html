@@ -1,0 +1,41 @@
+
+<app-header></app-header>
+<div class="statistics-container">
+<div>
+  <h2>Statistics</h2>
+  <div *ngIf="statistics.sales">
+    <p>Total Users: {{ statistics.sales }}</p>
+  </div>
+
+  <div *ngIf="statistics.users">
+    <p>Total Sales: {{ statistics.users }}</p>
+  </div>
+
+
+  <app-toggle
+  label="Show Total Revenue"
+  [isChecked]="showRevenue"
+  (onToggle)="handleToggle($event)">
+</app-toggle>
+
+  <div *ngIf="statistics.revenue && showRevenue">
+    <p>Total Revenue: {{ statistics.revenue }}</p>
+  </div>
+</div>
+
+<!-- 
+    <div class="col-md-6">
+      <div class="chart-container">
+        <canvas baseChart
+          [data]="data"
+          [labels]="labels"
+          [chartType]="'bar'"
+          [options]="options"
+          (chartClick)="onClick($event)"
+        ></canvas>
+      </div>
+    </div> -->
+  </div>
+
+
+  
