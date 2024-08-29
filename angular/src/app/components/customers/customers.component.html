@@ -3,12 +3,14 @@
 <div class="container">
   <h1>{{ title }}</h1>
   <button mat-raised-button color="primary" (click)="openCreateCustomerModal()">Add New Customer</button>
-  <div class="row">
-    <div class="col-md-3">
-      <h3>Software Categories</h3>
-      <!-- <app-tree [categories]="categories"></app-tree> -->
+  <h3>Software Categories</h3>
+  <div class="customers-main">
+    <div class="customers-aside">
+
+      <app-tree [categories]="categories"></app-tree>
+
     </div>
-    <div class="col-md-9">
+    <div class="customers-content">
       <mat-accordion>
         <mat-expansion-panel *ngFor="let customer of customers" [expanded]="customer === newlyAddedCustomer">
           <mat-expansion-panel-header>

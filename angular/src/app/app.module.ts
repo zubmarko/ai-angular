@@ -25,6 +25,7 @@ import { DemoMaterialModule } from './material-module';
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 import { CustomersComponent } from './components/customers/customers.component';
 import { CreateCustomerModalComponent } from './components/customers/create-customer-modal/create-customer-modal.component';
+import { TreeComponent } from './components/tree/tree.component';
 
 @NgModule({
   declarations: [
@@ -34,11 +35,7 @@ import { CreateCustomerModalComponent } from './components/customers/create-cust
     CustomersComponent,
     HeaderComponent,
     CreateCustomerModalComponent,
-    // MatAccordion,
-    // MatAccordion,
-    // MatLabel,
-    // MatError,
-    // MatFormField,
+    TreeComponent,
     ToggleComponent,
     // Other components (add more as needed)
   ],

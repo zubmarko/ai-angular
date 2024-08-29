@@ -1,4 +1,18 @@
 .container {
-    width: 960px;
+    width: 1160px;
     margin: 0 auto;
+}
+
+.customers {
+ &-main {
+    display: flex;
+ }
+
+ &-aside {
+    margin-right: 30px;
+    width: 320px;
+ }
+ &-content {
+    width: 100%;
+ }
 }
