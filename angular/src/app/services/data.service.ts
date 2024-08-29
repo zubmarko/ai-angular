@@ -10,5 +10,8 @@ export class DataService {
 
   getStatistics(): Observable<any> {
     return this.http.get('/assets/data/statistics.json');
+  };
+  getCustomers(): Observable<any> {
+    return this.http.get('/assets/data/customers.json');
   }
 }

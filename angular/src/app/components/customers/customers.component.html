@@ -1,0 +1,30 @@
+<app-header></app-header>
+
+<div class="container">
+  <h1>{{ title }}</h1>
+  <button mat-raised-button color="primary" (click)="openCreateCustomerModal()">Add New Customer</button>
+  <div class="row">
+    <div class="col-md-3">
+      <h3>Software Categories</h3>
+      <!-- <app-tree [categories]="categories"></app-tree> -->
+    </div>
+    <div class="col-md-9">
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let customer of customers" [expanded]="customer === newlyAddedCustomer">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{ customer.name }}
+            </mat-panel-title>
+            <mat-panel-description>
+              Age: {{ customer.age }} | City: {{ customer.city }}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div>
+            <p>Additional Information about {{ customer.name }}</p>
+            <!-- Add more content here if needed -->
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+</div>

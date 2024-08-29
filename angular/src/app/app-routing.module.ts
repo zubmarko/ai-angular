@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { StatisticsComponent } from './components/statistics/statistics.component';
-// import { CustomersComponent } from './components/customers/customers.component';
+import { CustomersComponent } from './components/customers/customers.component';
 import { AuthGuard } from './services/auth.guard';
 import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
 
@@ -12,7 +12,7 @@ const routes: Routes = [
   
   // canActivate: [AuthGuard] 
 },
-  // { path: 'customers', component: CustomersComponent, canActivate: [AuthGuard] },
+  { path: 'customers', component: CustomersComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', redirectTo: '/login' }
 ];
