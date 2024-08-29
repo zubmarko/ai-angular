@@ -15,7 +15,7 @@ interface Customer {
   styleUrls: ['./customers.component.scss']
 })
 export class CustomersComponent implements OnInit {
-  title = 'Customers Page';
+  title = 'Customers';
   customers: Customer[] = [];
   newlyAddedCustomer: Customer | null = null;
   categories = [

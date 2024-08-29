@@ -1,5 +1,5 @@
 export default function customersController($scope, dataService, $uibModal) {
-  $scope.title = "Customers Page";
+  $scope.title = "Customers";
   $scope.customers = [];
   $scope.newlyAddedCustomer = null;
 
