@@ -1,4 +1,6 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+
 
 @Component({
   selector: 'app-header',
@@ -6,17 +8,16 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  @Input() username: string | null = null;
-  @Output() onLogout = new EventEmitter<void>();
 
-  isDropdownOpen = false;
+  username: string | null = null;
 
-  toggleDropdown(event: Event): void {
-    event.preventDefault();
-    this.isDropdownOpen = !this.isDropdownOpen;
+  constructor(public authService: AuthService) {}
+
+  ngOnInit(): void {
+    this.username = this.authService.getUsername();
   }
 
   logout(): void {
-    this.onLogout.emit();
+    this.authService.logout();
   }
 }

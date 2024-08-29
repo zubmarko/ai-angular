@@ -9,10 +9,12 @@ import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/c
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'statistics', component: StatisticsComponent, 
-  
-  // canActivate: [AuthGuard] 
+  data: { title: 'Statistics' }  ,
+  canActivate: [AuthGuard] 
 },
-  { path: 'customers', component: CustomersComponent, canActivate: [AuthGuard] },
+  { path: 'customers', component: CustomersComponent,
+  data: { title: 'Customers' },
+  canActivate: [AuthGuard] },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', redirectTo: '/login' }
 ];
