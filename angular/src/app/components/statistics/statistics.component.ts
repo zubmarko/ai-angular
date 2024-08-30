@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
+import { ChartOptions, ChartData } from 'chart.js';
 
 interface Statistics {
   users: number;
@@ -16,20 +17,25 @@ interface Statistics {
 export class StatisticsComponent implements OnInit {
   title = 'Statistics Page';
   showRevenue = true;
-  labels = ['Users', 'Sales'];
-  data = [[]];
+  data: ChartData<'bar' | 'line'> = {
+    labels: ['Users', 'Sales'],
+    datasets: []
+  };  // Properly typed for Chart.js
   statistics: Statistics = { users: 0, sales: 0, revenue: 0 }; 
-  options: any;
+  options: ChartOptions<'bar' | 'line'> = {}; // Correctly typed for chart options
 
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
     this.dataService.getStatistics().subscribe(
-      (response) => {
+      (response: Statistics) => {
         this.statistics = response;
-        this.labels = ['Users', 'Sales', 'Revenue'];
-        // @ts-ignore
-        this.data = [[this.statistics.users, this.statistics.sales, this.statistics.revenue]];
+        this.data = {
+          labels: ['Users', 'Sales', 'Revenue'],
+          datasets: [
+            { data: [this.statistics.users, this.statistics.sales, this.statistics.revenue], label: 'Statistics' }
+          ]
+        };
         this.updateChartOptions();
       },
       (error) => {
@@ -41,34 +47,38 @@ export class StatisticsComponent implements OnInit {
   handleToggle(isChecked: boolean): void {
     this.showRevenue = isChecked;
     if (isChecked) {
-      this.labels = ['Users', 'Sales', 'Revenue'];
-      // @ts-ignore
-      this.data = [[this.statistics.users, this.statistics.sales, this.statistics.revenue]];
+      this.data = {
+        labels: ['Users', 'Sales', 'Revenue'],
+        datasets: [
+          { data: [this.statistics.users, this.statistics.sales, this.statistics.revenue], label: 'Statistics' }
+        ]
+      };
     } else {
-      this.labels = ['Users', 'Sales'];
-      // @ts-ignore
-      this.data = [[this.statistics.users, this.statistics.sales]];
+      this.data = {
+        labels: ['Users', 'Sales'],
+        datasets: [
+          { data: [this.statistics.users, this.statistics.sales], label: 'Statistics' }
+        ]
+      };
     }
     this.updateChartOptions();
   }
 
   updateChartOptions(): void {
     this.options = {
+      responsive: true,
       scales: {
-        yAxes: [
-          {
-            ticks: {
-              min: this.statistics.users,
-              max: this.showRevenue ? this.statistics.revenue : this.statistics.sales,
-            },
-          },
-        ],
-      },
+        y: {
+          // @ts-ignore
+          min: Math.min(...this.data.datasets[0].data),
+          // @ts-ignore
+          max: Math.max(...this.data.datasets[0].data),
+        }
+      }
     };
   }
 
-  // @ts-ignore
-  onClick(event:MatSlideToggleChange): void {
+  onClick(event: MatSlideToggleChange): void {
     console.log(event);
   }
 }
